@@ -1,7 +1,15 @@
+const express = require('express')
 const axios = require("axios")
 const scrapeit = require("scrape-it")
 const cheerio = require("cheerio")
 
+const app = express()
+
+app.listen(8000, (err)=>{
+  console.log("server started")
+}).on('error', (err)=>{
+  console.log(err)
+})
 
 axios.get("https://www.cebm.net/covid-19/in-patients-of-covid-19-what-are-the-symptoms-and-clinical-features-of-mild-and-moderate-case/")
 .then(
